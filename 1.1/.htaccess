@@ -1,0 +1,27 @@
+IndexIgnore *
+DirectoryIndex index.php
+
+<Files ~ "^.*\.([Dd][Ss]_[Ss]|[Ll][Oo][Gg]|[cC][oO][mM][mM][eE][nN][Hh][tT][rR]|[_])">
+ Order allow,deny
+ Deny from all
+ Satisfy All
+</Files>
+
+# Ubah nama database apabila diganti
+<Files "kiss.db">
+Order deny,allow
+deny from all
+</Files>
+
+# Ubah RewriteBase sesuai folder tempat ditaruhnya kisscms
+RewriteEngine On
+RewriteBase /kisscms
+RewriteRule index.html index.php [L]
+RewriteRule ^([a-z0-9-]+)$ index.php?$1
+RewriteRule ^pages/([a-z0-9-]+)$ index.php?pages=$1
+RewriteRule ^kategori/([a-z0-9-]+)$ index.php?kategori=$1
+RewriteRule ^halaman/([0-9-]+)$ index.php?halaman=$1
+RewriteRule ^manajemen/([a-z-]+)$ index.php?manajemen=$1
+RewriteRule ^manajemen/([a-z-]+)/halaman/([0-9-]+)$ index.php?manajemen=$1&halaman=$2
+RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)$ index.php?konten=$2
+RewriteRule ^([0-9-]+)/([0-9-]+)/([0-9-]+)/([a-z0-9-]+)$ index.php?konten=$4
