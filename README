@@ -1,0 +1,8 @@
+KISS, KISS Is Simple yet Small, adalah proyek CMS yang gw buat untuk belajar OOP PHP5.
+Fitur :
+   1. Blog-like, pengunjung bisa memasukkan komentar
+   2. Clean URL / permalink dari awal (rewrite)
+   3. Menggunakan database SQLite
+   4. Tidak perlu diinstall
+   5. Hanya untuk satu user
+   6. Komentar diproteksi dengan Akismet dan dilengkapi dengan Gravatar
